@@ -6,6 +6,8 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import Player from './Player';
 import { useDataLayerValue } from './DataLayer';
 
+
+
 const spotify = new SpotifyWebApi();
 
 function App() {
@@ -38,7 +40,11 @@ function App() {
   return (
     <div className="app">{token ? 
       <Player spotify={spotify}/>
-      : <Login />}</div>
+      : <Login />}
+
+    
+  
+    </div>
   );
 }
 
