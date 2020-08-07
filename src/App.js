@@ -32,15 +32,31 @@ function App() {
           user: user,
         });
       });
+
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: 'SET_PLAYLISTS',
           playlists: playlists,
         });
       });
-    }
 
+        spotify.getPlaylist("37i9dQZEVXcK1dHumwqyVd").then((response) =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
+    }
   }, []);
+
+  //   spotify.getPlayList('69yTaYWUyMmp77QQzGMPrc').then((response => {
+  //       dispatch({
+  //         type: "SET_DISCOVER_WEEKLY",
+  //         discover_weeekly: response,
+  //     })
+  //     });
+  //   }
+  // }, []);
 
   return (
     <div className="app">
